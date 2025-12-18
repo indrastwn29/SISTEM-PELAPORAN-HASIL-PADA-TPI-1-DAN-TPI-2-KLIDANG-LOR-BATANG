@@ -1,0 +1,83 @@
+{
+  "name": "TPI Dashboard",
+  "short_name": "TPI Dashboard",
+  "description": "Dashboard Sistem Tempat Pelelangan Ikan",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F7FB",
+  "theme_color": "#0066FF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/images/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "shortcuts": [
+    {
+      "name": "Input Bakul Baru",
+      "short_name": "Bakul",
+      "description": "Tambah data bakul baru",
+      "url": "/petugas/input-bakul",
+      "icons": [{ "src": "/assets/images/shortcut-bakul.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Input Kapal",
+      "short_name": "Kapal",
+      "description": "Tambah data kapal masuk",
+      "url": "/petugas/input-kapal",
+      "icons": [{ "src": "/assets/images/shortcut-kapal.png", "sizes": "96x96" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/screenshots/dashboard-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/assets/screenshots/dashboard-mobile.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}

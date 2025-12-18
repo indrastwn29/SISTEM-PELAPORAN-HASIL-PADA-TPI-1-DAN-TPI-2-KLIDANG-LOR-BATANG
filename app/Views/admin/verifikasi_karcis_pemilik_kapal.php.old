@@ -1,0 +1,53 @@
+<?= $this->include('layouts/header') ?>
+
+<h2>Verifikasi Karcis Pemilik Kapal</h2>
+
+<?php if (session()->getFlashdata('success')): ?>
+    <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
+<?php endif; ?>
+
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nomor Karcis</th>
+                        <th>Nama Nelayan/Kapal</th>
+                        <th>Berat Ikan</th>
+                        <th>Total Penjualan</th>
+                        <th>Tanggal</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $no = 1; ?>
+                    <?php foreach ($karcis as $k): ?>
+                    <tr>
+                        <td><?= $no++ ?></td>
+                        <td><?= $k['nomor_karcis'] ?></td>
+                        <td><?= $k['nama_nelayan'] ?></td>
+                        <td><?= $k['berat_ikan'] ?> kg</td>
+                        <td>Rp <?= number_format($k['total'], 0, ',', '.') ?></td>
+                        <td><?= date('d/m/Y', strtotime($k['created_at'])) ?></td>
+                        <td>
+                            <a href="<?= site_url('/admin/proses-verifikasi-pemilik-kapal/' . $k['id'] . '/verified') ?>" class="btn btn-success btn-sm">Setuju</a>
+                            <a href="<?= site_url('/admin/proses-verifikasi-pemilik-kapal/' . $k['id'] . '/rejected') ?>" class="btn btn-danger btn-sm">Tolak</a>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                    <?php if (empty($karcis)): ?>
+                    <tr>
+                        <td colspan="7" class="text-center">Tidak ada karcis yang perlu diverifikasi</td>
+                    </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<a href="<?= site_url('/admin') ?>" class="btn btn-secondary mt-3">Kembali</a>
+
+<?= $this->include('layouts/footer') ?>
